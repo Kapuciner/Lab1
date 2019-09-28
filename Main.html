@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Styles.css">
+    <script>
+        let str_ = document.documentURI
+        function clicked() {
+            document.getElementById("chref").innerHTML = "Ссылка обновлена";
+            document.getElementById("chref").setAttribute("href", str_)
+        }
+        function showcomputer() {
+            document.getElementById("modeltext").innerHTML = Computer.model + "<br>"
+            document.getElementById("produsertext").innerHTML = Computer.produser + "<br>"
+            document.getElementById("costtext").innerHTML = Computer.cost + "$" + "<br>"
+        }
+
+    </script>
+</head>
+<body>
+<div class = panel1><script>document.write(Math.sqrt(9))</script> is sqrt() of 9</div>
+<br>
+<div class="panel2"><a id = "chref">Нажмите кнопку для
+    замены текста страницы</a></div>
+<div><button onclick="clicked()">Нажмите чтобы обновить текст</button></div>
+<script>
+    let Computer = new Object()
+    Computer.model = "Байкал"
+    Computer.produser = "ООО \"Рога и копыта\""
+    Computer.cost = 1000
+</script>
+<br>
+<div><button onclick="showcomputer()">Нажмите чтобы узнать характеристики компьютера</button></div>
+<div>
+    <h1>Характеристики компьютера:</h1>
+    <p id = modeltext></p>
+    <p id = produsertext></p>
+    <p id = costtext></p>
+</div>
+
+
+</body>
+</html>
